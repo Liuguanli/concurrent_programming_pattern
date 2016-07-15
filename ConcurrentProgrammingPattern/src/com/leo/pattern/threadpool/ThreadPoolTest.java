@@ -52,6 +52,24 @@ public class ThreadPoolTest {
 				}
 			});
 		}
+		
+		threadPoolExecutor.execute(new UIThreadTask(1,1) {
+
+			@Override
+			public void run() {
+				
+			}
+			
+		});
+		
+		threadPoolExecutor.execute(new ThreadProxy(1, 1, new Runnable() {
+
+			@Override
+			public void run() {
+
+			}
+		}));
+		
 	}
 
 }
